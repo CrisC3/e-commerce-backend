@@ -96,9 +96,24 @@ router.put('/:id', async (req, res) => {
 router.delete('/:id', (req, res) => {
   // delete a category by its `id` value
   try {
+
+    // Assigns the req.params.id to a constant variable
+    const delId = req.params.id;
+
+    const catIdData = Category.destroy({
+      where: {
+        id: delId
+      }
+    });
+
+    // Returns the result, with code 200
+    res.status(200).json(catIdData);
     
   } catch (error) {
     
+    // Returns with an error, with code 500
+    res.status(500).json(error);
+
   }
 });
 
