@@ -32,7 +32,7 @@ router.get('/:id', async (req, res) => {
     // Assigns the req.params.id to a constant variable
     const id = req.params.id;
 
-    // Runs a find by primary of Category, and the joined Product table
+    // Runs a find by primary key of Category, and the joined Product table
     const catProdIdData = await Category.findByPk(id, {
       include: [{model: Product}]
     });
@@ -68,11 +68,27 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.put('/:id', (req, res) => {
+router.put('/:id', async (req, res) => {
   // update a category by its `id` value
   try {
     
+    // Assigns the req.params.id to a constant variable
+    const putId = req.params.id;
+
+    // Runs an update by primary key of Category
+    const catIdData = await Category.update(req.body, {
+      where: {
+        id: putId
+      }
+    });
+
+    // Returns the result, with code 200
+    res.status(200).json(catIdData);
+    
   } catch (error) {
+
+    // Returns with an error, with code 500
+    res.status(500).json(error);
     
   }
 });
