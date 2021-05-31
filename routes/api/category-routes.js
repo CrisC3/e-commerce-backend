@@ -22,6 +22,11 @@ router.get('/', async (req, res) => {
 router.get('/:id', (req, res) => {
   // find one category by its `id` value
   // be sure to include its associated Products
+  try {
+    
+  } catch (error) {
+    
+  }
 });
 
 router.post('/', (req, res) => {
