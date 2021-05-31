@@ -26,9 +26,28 @@ router.get('/', async (req, res) => {
 });
 
 // get one product
-router.get('/:id', (req, res) => {
+router.get('/:id', async (req, res) => {
   // find a single product by its `id`
   // be sure to include its associated Category and Tag data
+  try {
+
+    // Assigns the req.params.id to a constant variable
+    const getId = req.params.id;
+
+    // Runs a find by primary key of Prodyct, with Category and Tag tables
+    const prodCatTagIdData = await Product.findByPk(getId, {
+      include: [{model: Category}, {model: Tag}]
+    });
+
+    // Returns the result, with code 200
+    res.status(200).json(prodCatTagIdData);
+    
+  } catch (error) {
+    
+    // Returns with an error, with code 500
+    res.status(500).json(error);
+
+  }
 });
 
 // create new product
