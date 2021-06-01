@@ -42,7 +42,7 @@ Run "npm start" or "node server.js" in the PowerShell/Bash.
 
 ## Links
 Live/Production = N/A  
-Repository = https://github.com/CrisC3/e-commerce-backend 
+Repository = https://github.com/CrisC3/e-commerce-backend  
 [Video demo](https://drive.google.com/drive/folders/1XGsI_6CTqsjDyBT4x4Zp7jGyedn15EJf?usp=sharing)
 
 ## Questions
