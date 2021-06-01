@@ -24,11 +24,15 @@ Update .env
 - DB_USER='Username'  
 - DB_PW='Password'  
 - DB_NAME='ecommerce_db'  
+
 npm run seed  
 npm start
 
 ## Usage
-1. Download repository, open PowerShell/Bash, navigate in PowerShell/Bash into the downloaded repository folder, run "npm install", then "npm run seed", follow up by "npm start" or "node server.js"
+1. Download repository.
+2. Add .env file at the same folder directory as server.js file.
+3. Open PowerShell/Bash, navigate in PowerShell/Bash into the downloaded repository folder.
+4. Run "npm install", then "npm run seed", follow up by "npm start" or "node server.js".
 
 ## Contributing
 This is open source project. Feel free to contribute😊.
