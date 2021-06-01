@@ -24,9 +24,28 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/:id', (req, res) => {
+router.get('/:id', async (req, res) => {
   // find a single tag by its `id`
   // be sure to include its associated Product data
+  try {
+    
+    // Assigns the req.params.id to a constant variable
+    const getId = req.params.id;
+
+    // Runs a find by primary key of Tag, and the joined Product table
+    const tagsProdIdData = await Tag.findByPk(getId, {
+      include: [{model: Product}]
+    });
+
+    // Returns the result, with code 200
+    res.status(200).json(tagsProdIdData);
+
+  } catch (error) {
+
+    // Returns with an error, with code 500
+    res.status(500).json(error);
+    
+  }
 });
 
 router.post('/', (req, res) => {
