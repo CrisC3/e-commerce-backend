@@ -23,7 +23,7 @@ Add .env file at the same level as server.js
 Update .env  
 - DB_USER='Username'  
 - DB_PW='Password'  
-- DB_NAME='ecommerce_db'
+- DB_NAME='ecommerce_db'  
 npm run seed  
 npm start
 
