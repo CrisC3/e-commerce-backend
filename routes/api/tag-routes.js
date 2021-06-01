@@ -93,8 +93,29 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', async (req, res) => {
   // delete on tag by its `id` value
+  try {
+    
+    // Assigns the req.params.id to a constant variable
+    const delId = req.params.id;
+
+    // Runs a delete by primary key of Tag
+    const tagIdData = await Tag.destroy({
+      where: {
+        id: delId
+      }
+    });
+
+    // Returns the result, with code 200
+    res.status(200).json(tagIdData);
+    
+  } catch (error) {
+    
+    // Returns with an error, with code 500
+    res.status(500).json(error);
+
+  }
 });
 
 module.exports = router;
