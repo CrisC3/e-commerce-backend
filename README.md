@@ -19,11 +19,11 @@ eCommerce Backend is an API driven application, which can read/write/update/dele
 nodeJS  
 MySQL and Workbench  
 npm install  
-Add .env file at the same level as server.js
+Add .env file at the same level as server.js  
 Update .env  
-    DB_USER='Username'  
-    DB_PW='Password'  
-    DB_NAME='ecommerce_db'
+- DB_USER='Username'  
+- DB_PW='Password'  
+- DB_NAME='ecommerce_db'
 npm run seed  
 npm start
 
